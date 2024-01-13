@@ -5,6 +5,7 @@ import com.example.demo.dto.BookDto;
 import com.example.demo.entity.Author;
 import com.example.demo.repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
