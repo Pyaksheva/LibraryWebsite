@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.rest;
 
 import com.example.demo.dto.AuthorCreateDto;
 import com.example.demo.dto.AuthorDto;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-public class AuthorController {
+public class AuthorRestController {
 
     private final AuthorService authorService;
 
