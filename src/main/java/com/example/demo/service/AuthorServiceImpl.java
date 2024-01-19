@@ -5,6 +5,7 @@ import com.example.demo.dto.AuthorDto;
 import com.example.demo.dto.AuthorUpdateDto;
 import com.example.demo.dto.BookDto;
 import com.example.demo.entity.Author;
+import com.example.demo.entity.Book;
 import com.example.demo.repository.AuthorRepository;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -15,6 +16,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -70,6 +72,11 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public void deleteAuthor(Long id) {
         authorRepository.deleteById(id);
+    }
+    @Override
+    public List<AuthorDto> getAllAuthors() {
+        List<Author> authors = authorRepository.findAll();
+        return authors.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
     private Author convertDtoToEntity(AuthorCreateDto authorCreateDto) {
