@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,4 +18,10 @@ public class AuthorDto {
     private String surname;
 
     private List<BookDto> books;
+
+    public String getBookNames() {
+        if (books!=null) {
+            return books.stream().map(book -> book.getName()).collect(Collectors.joining(" "));
+        } else return " ";
+    }
 }
