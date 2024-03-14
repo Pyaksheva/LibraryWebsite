@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
 @RequiredArgsConstructor
 @Slf4j
 public class UserServiceImpl implements UserService {

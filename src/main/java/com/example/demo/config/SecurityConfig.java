@@ -1,6 +1,9 @@
 package com.example.demo.config;
 
+import com.example.demo.repository.AuthorRepository;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.AuthorService;
+import com.example.demo.service.AuthorServiceImpl;
 import com.example.demo.service.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
