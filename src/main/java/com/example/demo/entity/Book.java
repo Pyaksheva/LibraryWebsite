@@ -9,6 +9,7 @@ import java.util.Set;
 @Builder
 @Getter
 @Entity
+@EqualsAndHashCode
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

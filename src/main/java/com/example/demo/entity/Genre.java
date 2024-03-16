@@ -1,10 +1,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @Builder
 @Getter
 @Entity
+@EqualsAndHashCode
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
