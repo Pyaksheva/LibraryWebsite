@@ -1,5 +1,6 @@
 package com.example.demo.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class AuthorDto {
 
     private List<BookDto> books;
 
+    @JsonIgnore
     public String getBookNames() {
         if (books!=null) {
             return books.stream().map(book -> book.getName()).collect(Collectors.joining(" "));
